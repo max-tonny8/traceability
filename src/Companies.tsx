@@ -109,7 +109,7 @@ const Companies = (props: Props) => {
         if (contract) {
             try {
                 setLoading(true);
-                await contract.methods.insertCompany(values.documentId, values.location, values.name, values.processes).send({from: props.web3Account});
+                await contract.methods.insertCompany(values.documentId, values.name, values.location, values.processes).send({from: props.web3Account});
                 loadCompanies();
             } catch (error: any) {
                 alert(error.message);

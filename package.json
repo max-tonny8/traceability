@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@aws-amplify/ui-react": "^5.3.1",
     "@nullbeam/mnid": "^0.1.5",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
@@ -12,6 +13,9 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "antd": "^5.9.3",
+    "aws-amplify": "^5.3.12",
+    "aws-sdk": "^2.1489.0",
+    "axios": "^1.6.0",
     "ethers": "^6.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

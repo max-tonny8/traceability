@@ -1,7 +1,9 @@
 import React from 'react';
-import { CloseCircleOutlined, SmileOutlined, TeamOutlined, ApartmentOutlined, PoweroffOutlined } from '@ant-design/icons';
+import { CloseCircleOutlined, SmileOutlined, TeamOutlined, ApartmentOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Layout, Menu, MenuProps, Result, Spin, Typography } from 'antd';
 import Companies from './Companies';
+import Contacts from './Contacts';
+import Users from './Users';
 
 const { Paragraph, Text } = Typography;
 const { Header, Content, Footer, Sider } = Layout;
@@ -26,10 +28,11 @@ const getItem = (
 
 const MenuItems = [
   getItem('Companies', 'companies', <ApartmentOutlined/>),
-  getItem('Users', 'users', <TeamOutlined/>)
+  getItem('Contacts', 'contacts', <TeamOutlined/>),
+  getItem('Users', 'users', <UserOutlined/>)
 ];
 
-const App = () => {
+const App = ({ session }: any) => {
   const [web3Account, setWeb3Account] = React.useState<string|undefined>(undefined);
   const [view, setView] = React.useState<string>('companies');
 
@@ -96,10 +99,8 @@ const App = () => {
                 :
                 <React.Fragment>
                   {  view === 'companies' && <Companies web3Account={web3Account}/> }
-                  { 
-                    view === 'users' && 
-                    <div>not implement</div> 
-                  }
+                  {  view === 'contacts' && <Contacts web3Account={web3Account}/> }
+                  {  view === 'users' && <Users web3Account={web3Account}/> }
                 </React.Fragment>
               }
             </Content>
